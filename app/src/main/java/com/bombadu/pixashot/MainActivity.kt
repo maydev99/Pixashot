@@ -3,6 +3,7 @@ package com.bombadu.pixashot
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -43,6 +44,11 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+
+        imageAdapter.setOnItemClickListener {
+            Log.d("IMAGE_URL", it)
+            Toast.makeText(this, "URL: $it", Toast.LENGTH_SHORT).show()
         }
 
 
