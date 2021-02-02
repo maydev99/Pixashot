@@ -1,11 +1,11 @@
 package com.bombadu.pixashot
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    lateinit var viewModel: ImageViewModel
+    private lateinit var viewModel: ImageViewModel
     private val imageAdapter: ImageAdapter = ImageAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,15 +47,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         imageAdapter.setOnItemClickListener {
-            Log.d("IMAGE_URL", it)
-            Toast.makeText(this, "URL: $it", Toast.LENGTH_SHORT).show()
+            //Log.d("IMAGE_URL", it)
+            //Toast.makeText(this, "URL: $it", Toast.LENGTH_SHORT).show()
+            val bundle = Bundle()
+            val intent = Intent(this, ImageDetailActivity::class.java)
+            bundle.putString("url_key", it)
+            intent.putExtras(bundle)
+            startActivity(intent)
         }
 
 
     }
 
     private fun subscribeToObservers() {
-        viewModel.images.observe(this, Observer {
+        viewModel.images.observe(this, {
             it?.getContentIfNotHandled()?.let { result ->
                 when(result.status) {
                     Status.SUCCESS -> {

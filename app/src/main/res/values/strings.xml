@@ -2,4 +2,6 @@
     <string name="app_name">Pixashot</string>
     <string name="search_for_image">search for image</string>
     <string name="photo_image">Photo Image</string>
+    <string name="enter_comments">enter comments</string>
+    <string name="posted_by">Posted By</string>
 </resources>

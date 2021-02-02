@@ -2,11 +2,15 @@ package com.bombadu.pixashot
 
 
 import android.util.Log
+import com.bombadu.pixashot.local.LocalDao
+import com.bombadu.pixashot.local.LocalData
 import javax.inject.Inject
 import kotlin.Exception
 
 class DefaultImageRepository @Inject constructor(
+    private val localDao: LocalDao,
     private val pixabayAPI: PixabayAPI
+
 ) : ImageRepository {
     override suspend fun searchForImage(imageQuery: String): Resource<ImageResponse> {
         return try {
@@ -22,5 +26,9 @@ class DefaultImageRepository @Inject constructor(
             Log.e("EXCEPTION", "EXCEPTION:", e)
             Resource.error("Couldn't reach the server. Check your internet connection", null)
         }
+    }
+
+    override suspend fun insertEntry(localData: LocalData) {
+        localDao.insertData(localData)
     }
 }

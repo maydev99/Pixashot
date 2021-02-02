@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bombadu.pixashot.local.LocalData
 import kotlinx.coroutines.launch
 
 class ImageViewModel @ViewModelInject constructor(
@@ -24,5 +25,9 @@ class ImageViewModel @ViewModelInject constructor(
             val response = repository.searchForImage(imageQuery)
             _images.value = Event(response)
         }
+    }
+
+    fun insertImageData(localData: LocalData) = viewModelScope.launch {
+        repository.insertEntry(localData)
     }
 }
