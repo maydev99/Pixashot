@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pixashot</string>
+    <string name="search_for_image">search for image</string>
+    <string name="photo_image">Photo Image</string>
+</resources>
