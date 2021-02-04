@@ -4,4 +4,8 @@
     <string name="photo_image">Photo Image</string>
     <string name="enter_comments">enter comments</string>
     <string name="posted_by">Posted By</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_search">Image Search</string>
+    <string name="saved_images">Saved Images</string>
 </resources>
