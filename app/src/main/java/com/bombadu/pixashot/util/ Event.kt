@@ -1,4 +1,4 @@
-package com.bombadu.pixashot
+package com.bombadu.pixashot.util
 
 open class Event<out T>(private val content: T) {
 
@@ -21,6 +21,6 @@ open class Event<out T>(private val content: T) {
      * returns the content , even if it's already been handled.
      */
 
-    fun peekContent(): T = content
+    //fun peekContent(): T = content
 
 }

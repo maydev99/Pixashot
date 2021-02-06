@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bombadu.pixashot.Event
+import com.bombadu.pixashot.util.Event
 import com.bombadu.pixashot.repository.ImageRepository
 import com.bombadu.pixashot.network.ImageResponse
 import com.bombadu.pixashot.Resource
