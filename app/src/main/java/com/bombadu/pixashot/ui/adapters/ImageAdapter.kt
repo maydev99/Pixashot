@@ -1,4 +1,4 @@
-package com.bombadu.pixashot
+package com.bombadu.pixashot.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +7,8 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.RequestManager
+import com.bombadu.pixashot.R
 import com.squareup.picasso.Picasso
-import javax.inject.Inject
 
 class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageHolder>() {
     class ImageHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

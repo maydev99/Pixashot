@@ -1,10 +1,12 @@
-package com.bombadu.pixashot
+package com.bombadu.pixashot.ui
 
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.bombadu.pixashot.viewmodel.ImageViewModel
+import com.bombadu.pixashot.R
 import com.bombadu.pixashot.databinding.ActivityImageDetailBinding
 import com.bombadu.pixashot.local.LocalData
 import com.google.android.material.textfield.TextInputEditText

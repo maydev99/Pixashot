@@ -1,4 +1,4 @@
-package com.bombadu.pixashot
+package com.bombadu.pixashot.ui.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bombadu.pixashot.R
 import com.bombadu.pixashot.local.LocalData
 import com.squareup.picasso.Picasso
 

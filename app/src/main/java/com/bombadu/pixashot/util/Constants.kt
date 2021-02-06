@@ -1,4 +1,4 @@
-package com.bombadu.pixashot
+package com.bombadu.pixashot.util
 
 object Constants {
     const val BASE_URL = "https://pixabay.com"

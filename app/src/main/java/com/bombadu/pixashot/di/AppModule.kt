@@ -1,10 +1,12 @@
-package com.bombadu.pixashot
+package com.bombadu.pixashot.di
 
 import android.content.Context
-import androidx.room.Dao
 import androidx.room.Room
-import com.bombadu.pixashot.Constants.BASE_URL
-import com.bombadu.pixashot.Constants.DATABASE_NAME
+import com.bombadu.pixashot.util.Constants.BASE_URL
+import com.bombadu.pixashot.util.Constants.DATABASE_NAME
+import com.bombadu.pixashot.repository.DefaultImageRepository
+import com.bombadu.pixashot.repository.ImageRepository
+import com.bombadu.pixashot.network.PixabayAPI
 import com.bombadu.pixashot.local.LocalDao
 import com.bombadu.pixashot.local.LocalDatabase
 import dagger.Module

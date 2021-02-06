@@ -1,4 +1,4 @@
-package com.bombadu.pixashot
+package com.bombadu.pixashot.network
 
 
 import com.google.gson.annotations.SerializedName

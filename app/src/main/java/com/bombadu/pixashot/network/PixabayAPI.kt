@@ -1,5 +1,6 @@
-package com.bombadu.pixashot
+package com.bombadu.pixashot.network
 
+import com.bombadu.pixashot.BuildConfig
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

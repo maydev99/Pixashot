@@ -1,4 +1,4 @@
-package com.bombadu.pixashot
+package com.bombadu.pixashot.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bombadu.pixashot.viewmodel.ImageViewModel
+import com.bombadu.pixashot.R
+import com.bombadu.pixashot.ui.adapters.SavedImagesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

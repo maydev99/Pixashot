@@ -6,12 +6,12 @@
     app:startDestination="@id/savedFragment">
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.bombadu.pixashot.SearchFragment"
+        android:name="com.bombadu.pixashot.ui.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/savedFragment"
-        android:name="com.bombadu.pixashot.SavedFragment"
+        android:name="com.bombadu.pixashot.ui.SavedFragment"
         android:label="fragment_saved"
         tools:layout="@layout/fragment_saved" >
         <action
