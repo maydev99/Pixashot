@@ -2,6 +2,7 @@ package com.bombadu.pixashot
 
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import com.bombadu.pixashot.local.LocalDao
 import com.bombadu.pixashot.local.LocalData
 import javax.inject.Inject
@@ -30,5 +31,13 @@ class DefaultImageRepository @Inject constructor(
 
     override suspend fun insertEntry(localData: LocalData) {
         localDao.insertData(localData)
+    }
+
+    override suspend fun deleteImageItem(localData: LocalData) {
+        localDao.deleteData(localData)
+    }
+
+    override fun observeAllData(): LiveData<List<LocalData>> {
+        return localDao.observeAllData()
     }
 }

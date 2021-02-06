@@ -9,5 +9,5 @@ data class LocalData(
   var comments: String,
   var name: String,
   @PrimaryKey(autoGenerate = true)
-  val id: Int? = null
+  var id: Int? = null
 )

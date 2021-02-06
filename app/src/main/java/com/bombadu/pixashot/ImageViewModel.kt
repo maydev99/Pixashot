@@ -12,6 +12,8 @@ class ImageViewModel @ViewModelInject constructor(
     private val repository: ImageRepository
 ) : ViewModel() {
 
+    val savedData = repository.observeAllData()
+
     private val _images = MutableLiveData<Event<Resource<ImageResponse>>>()
     val images: LiveData<Event<Resource<ImageResponse>>> = _images
 
@@ -29,5 +31,9 @@ class ImageViewModel @ViewModelInject constructor(
 
     fun insertImageData(localData: LocalData) = viewModelScope.launch {
         repository.insertEntry(localData)
+    }
+
+    fun deleteImage(localData: LocalData) = viewModelScope.launch {
+        repository.deleteImageItem(localData)
     }
 }
