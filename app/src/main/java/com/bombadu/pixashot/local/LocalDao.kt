@@ -12,6 +12,6 @@ interface LocalDao {
     @Delete
     suspend fun deleteData(localData: LocalData)
 
-    @Query("SELECT * FROM data_table")
+    @Query("SELECT * FROM data_table ORDER BY id DESC")
     fun observeAllData(): LiveData<List<LocalData>>
 }

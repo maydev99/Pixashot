@@ -12,4 +12,6 @@
     <string name="by_michael_may">by Michael May</string>
     <string name="preview_of_image">Preview of Image</string>
     <string name="by">by </string>
+    <string name="you_have_no_images_tap_the_image_search_button_to_get_started">You have no images saved. Tap the Image Search button to get started.</string>
+    <string name="about">About</string>
 </resources>

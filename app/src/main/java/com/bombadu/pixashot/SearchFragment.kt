@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -19,6 +20,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.util.*
+
 
  @AndroidEntryPoint
 class SearchFragment : Fragment() {
@@ -32,6 +35,7 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
 
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
@@ -74,11 +78,12 @@ class SearchFragment : Fragment() {
     }
 
     private fun subscribeToObservers() {
-        viewModel.images.observe(viewLifecycleOwner,  {
+        viewModel.images.observe(viewLifecycleOwner, {
             it?.getContentIfNotHandled()?.let { result ->
-                when(result.status) {
+                when (result.status) {
                     Status.SUCCESS -> {
-                        val urls = result.data?.hits?.map { imageResult -> imageResult.largeImageURL }
+                        val urls =
+                            result.data?.hits?.map { imageResult -> imageResult.largeImageURL }
                         imageAdapter.images = urls ?: listOf()
                     }
 
@@ -101,6 +106,8 @@ class SearchFragment : Fragment() {
             setHasFixedSize(true)
         }
     }
+
+
 
 
 }
