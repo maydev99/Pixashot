@@ -1,4 +1,4 @@
- package com.bombadu.pixashot.ui
+package com.bombadu.pixashot.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bombadu.pixashot.*
+import com.bombadu.pixashot.R
+import com.bombadu.pixashot.Status
 import com.bombadu.pixashot.ui.adapters.ImageAdapter
 import com.bombadu.pixashot.util.Constants.GRID_SPAN_COUNT
 import com.bombadu.pixashot.util.Constants.SEARCH_TIME_DELAY
@@ -24,7 +25,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
- @AndroidEntryPoint
+@AndroidEntryPoint
 class SearchFragment : Fragment() {
     private lateinit var viewModel: ImageViewModel
     private val imageAdapter: ImageAdapter = ImageAdapter()
@@ -51,8 +52,9 @@ class SearchFragment : Fragment() {
         setupRecyclerView()
         subscribeToObservers()
 
-        var job : Job? = null
-            imageSearchEditText.addTextChangedListener { editable ->
+
+        var job: Job? = null
+        imageSearchEditText.addTextChangedListener { editable ->
             job?.cancel()
             job = lifecycleScope.launch {
                 delay(SEARCH_TIME_DELAY)
@@ -107,8 +109,6 @@ class SearchFragment : Fragment() {
             setHasFixedSize(true)
         }
     }
-
-
 
 
 }
